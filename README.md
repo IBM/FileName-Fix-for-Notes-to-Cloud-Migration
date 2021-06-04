@@ -1,77 +1,136 @@
-<!-- This should be the location of the title of the repository, normally the short name -->
-# repo-template
+<p align="center">
+  <h3 align="center">FileName Fix for Lotus Notes to Cloud Migration</h3>
 
-<!-- Build Status, is a great thing to have at the top of your repository, it shows that you take your CI/CD as first class citizens -->
-<!-- [![Build Status](https://travis-ci.org/jjasghar/ibm-cloud-cli.svg?branch=master)](https://travis-ci.org/jjasghar/ibm-cloud-cli) -->
+  <p align="center">
+    This open source utility can fix file name issues while migrating data from Lotus Notes to MongoDB and IBM COS
+    <br />
+    <a href="https://github.com/IBM/FileName-Fix-for-Notes-to-Cloud-Migation"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/IBM/FileName-Fix-for-Notes-to-Cloud-Migation">Scope</a>
+    ·
+    <a href="https://github.com/IBM/FileName-Fix-for-Notes-to-Cloud-Migation/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/IBM/FileName-Fix-for-Notes-to-Cloud-Migation/issues">Request Feature</a>
+  </p>
 
-<!-- Not always needed, but a scope helps the user understand in a short sentance like below, why this repo exists -->
-## Scope
+<!-- TABLE OF CONTENTS -->
 
-The purpose of this project is to provide a template for new open source repositories.
+## Table of Contents
 
-<!-- A more detailed Usage or detailed explaination of the repository here -->
+- [About the Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+Lotus Notes has been used to develop Workflow and Repository applications for many years. It is used as a repository for huge amount of data of various types (pdf, xls, doc, mov, wmv, jpg etc). It is used Globally by IBM Customers/Users.
+
+There are many instances where a user uploads attachments to lotus notes database with file names that contains special characters. Lotus Notes does not stops user in doing so by default. But the problem comes when you try to migrate that file from Lotus Notes to MongoDB or IBM Cloud Object Storage.
+
+I have created solutions to migrate data from Lotus Notes to MongoDB and IBM Cloud Object Storage
+
+Lotus Notes to MongoDB Migration - https://github.com/IBM/Lotus-Notes-to-MongoDB-Migration Lotus Notes to IBM Cloud Object Storage migration - https://github.com/IBM/Lotus-Notes-to-IBM-Cloud-Object-Storage-Migration
+
+You can refer to this repositories for complete migration code.
+But this fails to migrate attachments if they contain any special character in file name.
+
+This project presents a method that can fix this issue.
+
+### Built With
+
+- [Python](https://www.python.org/downloads/)
+- [Domino Access Service API](https://ds_infolib.hcltechsw.com/ldd/ddwiki.nsf/xpAPIViewer.xsp?lookupName=IBM+Domino+Access+Services+9.0.1#action=openDocument&content=catcontent&ct=api)
+- [MongoDB](https://www.mongodb.com/try/download/community)
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+You need to install following Python packages
+
+- pip
+
+```sh
+pip install pymongo
+pip install csv
+pip install requests
+pip install traceback
+pip install re
+pip install quopri
+```
+
+You need to configure Domino Access Service API on your Domino server and database. Here are the instruction to setup and enable that, <br />
+[Instructions to setup and enable Domino Access Service API][documentation-file]
+
+### Installation
+
+1. Clone the repo
+
+```sh
+git clone https://github.com/IBM/FileName-Fix-for-Notes-to-Cloud-Migation.git
+```
+
+2. Install Python packages
+
+```sh
+pip install
+```
+
+<!-- USAGE EXAMPLES -->
+
 ## Usage
 
-This repository contains some example best practices for open source repositories:
+please refer to the [Documentation][documentation-file]
 
-* [LICENSE](LICENSE)
-* [README.md](README.md)
-* [CONTRIBUTING.md](CONTRIBUTING.md)
-* [MAINTAINERS.md](MAINTAINERS.md)
-<!-- A Changelog allows you to track major changes and things that happen, https://github.com/github-changelog-generator/github-changelog-generator can help automate the process -->
-* [CHANGELOG.md](CHANGELOG.md)
+<!-- ROADMAP -->
 
-> These are optional
+## Roadmap
 
-<!-- The following are OPTIONAL, but strongly suggested to have in your repository. -->
-* [dco.yml](.github/dco.yml) - This enables DCO bot for you, please take a look https://github.com/probot/dco for more details.
-* [travis.yml](.travis.yml) - This is a example `.travis.yml`, please take a look https://docs.travis-ci.com/user/tutorial/ for more details.
+See the [open issues](https://github.com/IBM/FileName-Fix-for-Notes-to-Cloud-Migation/issues) for a list of proposed features (and known issues).
 
-These may be copied into a new or existing project to make it easier for developers not on a project team to collaborate.
+<!-- CONTRIBUTING -->
 
-<!-- A notes section is useful for anything that isn't covered in the Usage or Scope. Like what we have below. -->
-## Notes
+## Contributing
 
-**NOTE: While this boilerplate project uses the Apache 2.0 license, when
-establishing a new repo using this template, please use the
-license that was approved for your project.**
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-**NOTE: This repository has been configured with the [DCO bot](https://github.com/probot/dco).
-When you set up a new repository that uses the Apache license, you should
-use the DCO to manage contributions. The DCO bot will help enforce that.
-Please contact one of the IBM GH Org stewards.**
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-<!-- Questions can be useful but optional, this gives you a place to say, "This is how to contact this project maintainers or create PRs -->
-If you have any questions or issues you can create a new [issue here][issues].
-
-Pull requests are very welcome! Make sure your patches are well tested.
-Ideally create a topic branch for every separate change you make. For
-example:
-
-1. Fork the repo
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+<!-- LICENSE -->
 
 ## License
 
-All source files must include a Copyright and License header. The SPDX license header is 
-preferred because it can be easily scanned.
+This code pattern is licensed under the Apache Software License, Version 2. Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
-If you would like to see the detailed LICENSE click [here](LICENSE).
+[Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
 
-```text
-#
-# Copyright 2020- IBM Inc. All rights reserved
-# SPDX-License-Identifier: Apache2.0
-#
-```
-## Authors
+<!-- CONTACT -->
 
-Optionally, you may include a list of authors, though this is redundant with the built-in
-GitHub list of contributors.
+## Contact
 
-- Author: New OpenSource IBMer <new-opensource-ibmer@ibm.com>
+Kirti Jha - kirtijha@in.ibm.com
 
-[issues]: https://github.com/IBM/repo-template/issues/new
+Project Link: [https://github.com/IBM/FileName-Fix-for-Notes-to-Cloud-Migation](https://github.com/IBM/FileName-Fix-for-Notes-to-Cloud-Migation)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[documentation-file]: documentation/File%20Name%20Fix%20for%20Notes%20to%20Cloud%20Migration.docx
